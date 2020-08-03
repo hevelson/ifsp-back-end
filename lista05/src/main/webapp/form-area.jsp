@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<%@ page import="calculate.AreaCalculator" %>
+<%@ page import="calculate.AreaCalculator;" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,6 @@
         String areaType;
         areaType = request.getParameter("geometric_form");
     %>
-    
+    <p>Nome: <%= areaType %></p>
 </body>
 </html>
