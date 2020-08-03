@@ -1,4 +1,5 @@
-<%@ page import="com.ifsp.backend.AreaCalculator" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page import="calculate.AreaCalculator" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
         AreaCalculator calculator = new AreaCalculator();
 
         String areaType;
-        areaType = request.getParameter("geometric_form"));
+        areaType = request.getParameter("geometric_form");
     %>
     
 </body>

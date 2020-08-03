@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>7
-<%@ page import="java.model.Person" %>
+<%@page import="model.Person" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,10 @@
 
         Person contato = new Person();
         contato.setFirtName(request.getParameter("first_name"));
+        contato.setFirtName(request.getParameter("last_name"));
+        contato.setFirtName(request.getParameter("email"));
+        contato.setFirtName(request.getParameter("phone"));
+        contato.setFirtName(request.getParameter("birthday"));
     %>
     <main>
         <h1>Pessoa</h1>

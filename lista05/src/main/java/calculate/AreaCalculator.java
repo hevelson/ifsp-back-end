@@ -1,4 +1,4 @@
-package com.ifsp.backend;
+package calculate;
 
 public class AreaCalculator {
 
