@@ -7,7 +7,7 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 public class DatabaseConnection {
 
     private Connection conexao = null;
-    private final String DATABASE = "ifsp";   //troque pelo nome do seu database
+    private final String DATABASE = "dbclientes";   //troque pelo nome do seu database
     private final String LOGIN = "root";      //usuário com acesso ao banco de dados (default: root)
     private final String PASSWORD = "";       //senha do usuário (default: '')
     private final String HOST = "127.0.0.1";  //se o mysql estiver rodando localmente, use "localhost" ou "127.0.0.1"
@@ -28,9 +28,9 @@ public class DatabaseConnection {
         }
         catch (SQLException sqlerror) {
             System.out.println("FALHA NA CONEXÃO: " + sqlerror.getMessage());
-        }       
+        }
 
         return conexao;
     }
-    
+
 }

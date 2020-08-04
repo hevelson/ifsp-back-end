@@ -1,11 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
-    import="java.sql.SQLException"
-    import="java.util.ArrayList"
-    import="java.util.List"
-    import="dao.*"
-    import="model.*"
-%>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.ClientDao" %>
+<%@ page import="model.Client" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,24 +15,25 @@
     <h1>Listagem de clientes</h1>
     <%
         out.println("Consulta ao banco");
+        List<Client> listClients = new ArrayList<Client>();
 
         try {
             ClientDao dao = new ClientDao();
-            List<Client> listClients = dao.list();
+            listClients = dao.list();
             out.println("ok");
         } catch (SQLException e) {
-            out.println("<p>Erro " + e.getMessage() + "</p>");   
+            out.println("<p>Erro " + e.getMessage() + "</p>");
         }
     %>
     <table>
         <tbody>
             <% for (Client client : listClients) { %>
                 <tr>
-                    <td><% client.getIdClient() %></td>
-                    <td><% client.getName() %></td>
-                    <td><% client.getAddress() %></td>
-                    <td><% client.getPhone() %></td>
-                    <td><% client.getCEP() %></td>
+                    <td><%= client.getIdClient() %></td>
+                    <td><%= client.getName() %></td>
+                    <td><%= client.getAddress() %></td>
+                    <td><%= client.getPhone() %></td>
+                    <td><%= client.getCEP() %></td>
                 </tr>
             <% } %>
         </tbody>

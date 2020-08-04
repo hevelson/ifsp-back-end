@@ -11,7 +11,7 @@ import model.Client;
 import util.DatabaseConnection;
 
 public class ClientDao {
-    
+
     private final Connection con;
 
     public ClientDao() {
@@ -21,7 +21,7 @@ public class ClientDao {
     public void create(final Client client) throws SQLException {
 
         String query;
-        query = "INSERT INTO client (name, address, phone, cep) VALUES (?, ?, ?, ?);";
+        query = "INSERT INTO tbcliente (name, address, phone, cep, document) VALUES (?, ?, ?, ?, ?);";
 
         final PreparedStatement st = con.prepareStatement(query);
         st.setString(1, client.getName());
@@ -37,7 +37,7 @@ public class ClientDao {
     public List<Client> list() throws SQLException, Exception {
 
         final List<Client> list = new ArrayList();
-        final String query = "SELECT * FROM client";
+        final String query = "SELECT * FROM tbcliente";
 
         final PreparedStatement st = con.prepareStatement(query);
 
@@ -52,7 +52,7 @@ public class ClientDao {
             client.setPhone( rs.getString("phone") );
             client.setCEP( rs.getString("cep") );
 
-            list.add(client);            
+            list.add(client);
         }
 
         return list;
