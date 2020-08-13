@@ -2,7 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dao.ClientDao" %>
-<%@ page import="model.Client" %>
+<%@ page import="model.Pessoa" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
     <h1>Listagem de clientes</h1>
     <%
         out.println("Consulta ao banco");
-        List<Client> listClients = new ArrayList<Client>();
+        List<Client> listClients = new ArrayList<Pessoa>();
 
         try {
             ClientDao dao = new ClientDao();
@@ -27,7 +27,7 @@
     %>
     <table>
         <tbody>
-            <% for (Client client : listClients) { %>
+            <% for (Pessoa client : listClients) { %>
                 <tr>
                     <td><%= client.getIdClient() %></td>
                     <td><%= client.getName() %></td>

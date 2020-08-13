@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Client;
+import model.Pessoa;
 import util.DatabaseConnection;
 
 public class ClientDao {
@@ -18,7 +18,7 @@ public class ClientDao {
         this.con = new DatabaseConnection().getConnection();
     }
 
-    public void create(final Client client) throws SQLException {
+    public void create(Pessoa client) throws SQLException {
 
         String query;
         query = "INSERT INTO client (name, address, phone, cep) VALUES (?, ?, ?, ?);";
@@ -34,9 +34,9 @@ public class ClientDao {
         con.close();
     }
 
-    public List<Client> list() throws SQLException, Exception {
+    public List<Pessoa> list() throws SQLException, Exception {
 
-        final List<Client> list = new ArrayList();
+        final List<Pessoa> list = new ArrayList();
         final String query = "SELECT * FROM client";
 
         final PreparedStatement st = con.prepareStatement(query);
@@ -44,7 +44,7 @@ public class ClientDao {
         final ResultSet rs = st.executeQuery();
 
         while (rs.next()) {
-            final Client client = new Client();
+            final Pessoa client = new Pessoa();
 
             client.setIdClient( rs.getInt("id") );
             client.setName( rs.getString("name") );

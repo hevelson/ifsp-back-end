@@ -1,6 +1,6 @@
 package model;
 
-public class Client {
+public class Pessoa {
 
     private int idClient;
     private String name;
